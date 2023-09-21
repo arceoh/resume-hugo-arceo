@@ -9,11 +9,10 @@ import {
 } from '@heroicons/react/24/outline';
 
 import GithubIcon from '../components/Icon/GithubIcon';
-import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
 import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
 import TwitterIcon from '../components/Icon/TwitterIcon';
-import heroImage from '../images/header-background.webp';
+import heroImage from '../images/header-background_01.webp';
 import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
 import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
@@ -25,7 +24,7 @@ import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
 import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
 import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
 import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
-import profilepic from '../images/profilepic.jpg';
+import profilepic from '../images/hugoarceo.webp';
 import testimonialImage from '../images/testimonial.webp';
 import {
   About,
@@ -44,8 +43,8 @@ import {
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: 'React Resume Template',
-  description: "Example site built with Tim Baker's react resume template",
+  title: 'Hugo Arceo',
+  description: 'Resume for Hugo Arceo',
 };
 
 /**
@@ -69,32 +68,27 @@ export type SectionId = (typeof SectionId)[keyof typeof SectionId];
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `I'm Tim Baker.`,
+  name: `I'm Hugo Arceo.`,
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Victoria based <strong className="text-stone-100">Full Stack Software Engineer</strong>, currently working
-        at <strong className="text-stone-100">Instant Domains</strong> helping build a modern, mobile-first, domain
-        registrar and site builder.
+        I'm a Orange County based <strong className="text-stone-100">Full Stack Developer</strong>, currently working at{' '}
+        <strong className="text-stone-100">AESD</strong> helping build digital platform designed to support our school
+        district's educational goals.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me training in <strong className="text-stone-100">Muay Thai</strong>,
-        plucking my <strong className="text-stone-100">banjo</strong>, or exploring beautiful{' '}
-        <strong className="text-stone-100">Vancouver Island</strong>.
+        In my free time, I find joy in <strong className="text-stone-100">skateboarding</strong> through parks,
+        strategizing over <strong className="text-stone-100">board games</strong>, and immersing myself in the natural
+        beauty of Southern California's stunning landscapes.
       </p>
     </>
   ),
   actions: [
     {
-      href: '/assets/resume.pdf',
+      href: 'https://drive.google.com/file/d/1bhna7ByOe9mJO0z_REQB4nFM5kX22YXf/view?usp=sharing',
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
-    },
-    {
-      href: `#${SectionId.Contact}`,
-      text: 'Contact',
-      primary: false,
     },
   ],
 };
@@ -104,16 +98,14 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Use this bio section as your way of describing yourself and saying what you do, what technologies you like
-  to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
-  in.`,
+  description: `I'm a fun-loving and creative individual with a deep passion for web development. I specialize in building websites and seamlessly connecting APIs to create dynamic online experiences. My comfort zone revolves around JavaScript, React, Alpine, CSS, and Tailwind CSS, while I also have valuable experience with Node, Python, and Django`,
   aboutItems: [
-    {label: 'Location', text: 'Victoria, BC', Icon: MapIcon},
-    {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Canadian / Irish', Icon: FlagIcon},
-    {label: 'Interests', text: 'Motorcycles, Muay Thai, Banjos', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of Victoria', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},
+    {label: 'Location', text: 'Irvine, CA', Icon: MapIcon},
+    {label: 'Age', text: '38', Icon: CalendarIcon},
+    {label: 'Nationality', text: 'Mexican American', Icon: FlagIcon},
+    {label: 'Interests', text: 'Skateboarding, Board Games, Pizza', Icon: SparklesIcon},
+    {label: 'Study', text: 'California State University Fullerton', Icon: AcademicCapIcon},
+    {label: 'Employment', text: 'Anaheim Elementary School District', Icon: BuildingOffice2Icon},
   ],
 };
 
@@ -129,12 +121,8 @@ export const skills: SkillGroup[] = [
         level: 10,
       },
       {
-        name: 'French',
-        level: 4,
-      },
-      {
         name: 'Spanish',
-        level: 3,
+        level: 4,
       },
     ],
   },
@@ -142,16 +130,24 @@ export const skills: SkillGroup[] = [
     name: 'Frontend development',
     skills: [
       {
-        name: 'React',
+        name: 'JavaScript',
         level: 9,
       },
       {
-        name: 'Typescript',
-        level: 7,
+        name: 'React',
+        level: 8,
       },
       {
-        name: 'GraphQL',
-        level: 6,
+        name: 'Typescript',
+        level: 8,
+      },
+      {
+        name: 'CSS',
+        level: 9,
+      },
+      {
+        name: 'Tailwind CSS',
+        level: 9,
       },
     ],
   },
@@ -160,15 +156,15 @@ export const skills: SkillGroup[] = [
     skills: [
       {
         name: 'Node.js',
-        level: 8,
+        level: 6,
       },
       {
-        name: 'Rust',
+        name: 'MongoDB',
+        level: 6,
+      },
+      {
+        name: 'SQL',
         level: 5,
-      },
-      {
-        name: 'Golang',
-        level: 4,
       },
     ],
   },
@@ -177,15 +173,7 @@ export const skills: SkillGroup[] = [
     skills: [
       {
         name: 'React Native',
-        level: 9,
-      },
-      {
-        name: 'Flutter',
         level: 4,
-      },
-      {
-        name: 'Swift',
-        level: 3,
       },
     ],
   },
@@ -268,40 +256,72 @@ export const portfolioItems: PortfolioItem[] = [
  */
 export const education: TimelineItem[] = [
   {
-    date: 'April 2007',
-    location: 'Clown college',
-    title: 'Masters in Beer tasting',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
-  },
-  {
-    date: 'March 2003',
-    location: 'School of Business',
-    title: 'What did you study 101',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: '2012 - 2014',
+    location: 'California State University Fullerton',
+    title: 'Bachelor of Fine Arts (BFA): Graphic Design',
+    content: (
+      <ul className="ml-4 space-y-2 text-sm">
+        <li>
+          <strong>Graphic Design Fundamentals:</strong> A strong foundation in the principles of graphic design,
+          including layout, composition, color theory, typography, and visual hierarchy.
+        </li>
+        <li>
+          <strong>Digital Proficiency:</strong> Proficiency in using industry-standard design software such as Adobe
+          Creative Suite (Photoshop, Illustrator, InDesign) and other digital design tools.
+        </li>
+        <li>
+          <strong>User Experience (UX) Design:</strong> Understanding of UX principles to create user-friendly and
+          engaging digital interfaces.
+        </li>
+      </ul>
+    ),
   },
 ];
 
 export const experience: TimelineItem[] = [
   {
-    date: 'March 2010 - Present',
-    location: 'Awesome Development Company',
-    title: 'Senior UX Engineer',
+    date: 'April 2016 - Present',
+    location: 'Anaheim Elementary School District',
+    title: 'Web Developer & Graphics Specialist',
     content: (
-      <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
-      </p>
+      <ul className="ml-4 space-y-2 text-sm">
+        <li>
+          <strong>Day-to-Day:</strong> Develop and maintain employee intranet, District website, school websites.
+        </li>
+        <li>
+          <strong>Accomplishments:</strong>{' '}
+          <ul>
+            <li>Redesigned 23 School Site logos and branding guidelines</li>
+            <li>Migrated previous site from Joomla to WordPress</li>
+            <li>Integrated Azure SSO for employee intranet</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Tech Stack:</strong> WordPress, PHP, Timber, Twig, JavaScript, Alpine JS, Tailwind CSS
+        </li>
+      </ul>
     ),
   },
   {
-    date: 'March 2007 - February 2010',
-    location: 'Garage Startup Studio',
-    title: 'Junior bug fixer',
+    date: '2013 - April 2012',
+    location: '48WS',
+    title: 'Web Developer',
     content: (
-      <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
-      </p>
+      <ul className="ml-4 space-y-2 text-sm">
+        <li>
+          <strong>Day-to-Day:</strong> Maintain and build customer website from templates.
+        </li>
+        <li>
+          <strong>Accomplishments:</strong>{' '}
+          <ul>
+            <li>Converted base template from tables to responsive Bootstrap 3</li>
+            <li>Integrated one off e-commerce WordPress sites</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Tech Stack:</strong> WordPress, CSS, Bootstrap, jQuery, JavaScript
+        </li>
+      </ul>
     ),
   },
 ];
@@ -365,9 +385,8 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/timbakerx/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/reactresume/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
+  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/arceoh'},
+  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/3147991/harceo'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/hugoarceo/'},
+  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/hugo_arceo'},
 ];

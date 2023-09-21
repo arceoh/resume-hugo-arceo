@@ -11,10 +11,7 @@ export const headerID = 'headerNav';
 
 const Header: FC = memo(() => {
   const [currentSection, setCurrentSection] = useState<SectionId | null>(null);
-  const navSections = useMemo(
-    () => [SectionId.About, SectionId.Resume, SectionId.Portfolio, SectionId.Testimonials, SectionId.Contact],
-    [],
-  );
+  const navSections = useMemo(() => [SectionId.About, SectionId.Resume], []);
 
   const intersectionHandler = useCallback((section: SectionId | null) => {
     section && setCurrentSection(section);
@@ -37,7 +34,7 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
     const activeClass = classNames(baseClass, 'text-orange-500');
     const inactiveClass = classNames(baseClass, 'text-neutral-100');
     return (
-      <header className="fixed top-0 z-50 hidden w-full bg-neutral-900/50 p-4 backdrop-blur sm:block" id={headerID}>
+      <header className="fixed top-0 z-50 hidden w-full p-4 bg-neutral-900/50 backdrop-blur sm:block" id={headerID}>
         <nav className="flex justify-center gap-x-8">
           {navSections.map(section => (
             <NavItem
@@ -70,9 +67,9 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
       <>
         <button
           aria-label="Menu Button"
-          className="fixed right-2 top-2 z-40 rounded-md bg-orange-500 p-2 ring-offset-gray-800/60 hover:bg-orange-400 focus:outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 sm:hidden"
+          className="fixed z-40 p-2 bg-orange-500 rounded-md right-2 top-2 ring-offset-gray-800/60 hover:bg-orange-400 focus:outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 sm:hidden"
           onClick={toggleOpen}>
-          <Bars3BottomRightIcon className="h-8 w-8 text-white" />
+          <Bars3BottomRightIcon className="w-8 h-8 text-white" />
           <span className="sr-only">Open sidebar</span>
         </button>
         <Transition.Root as={Fragment} show={isOpen}>
@@ -85,7 +82,7 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
               leave="transition-opacity ease-linear duration-300"
               leaveFrom="opacity-100"
               leaveTo="opacity-0">
-              <Dialog.Overlay className="fixed inset-0 bg-stone-900 bg-opacity-75" />
+              <Dialog.Overlay className="fixed inset-0 bg-opacity-75 bg-stone-900" />
             </Transition.Child>
             <Transition.Child
               as={Fragment}
@@ -96,7 +93,7 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full">
               <div className="relative w-4/5 bg-stone-800">
-                <nav className="mt-5 flex flex-col gap-y-2 px-2">
+                <nav className="flex flex-col px-2 mt-5 gap-y-2">
                   {navSections.map(section => (
                     <NavItem
                       activeClass={activeClass}
